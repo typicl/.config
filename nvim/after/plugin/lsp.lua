@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'ts_ls', 'rust_analyzer','solidity_ls_nomicfoundation', 'cssls'},
+  ensure_installed = {'ts_ls', 'rust_analyzer','solidity_ls_nomicfoundation', 'cssls', 'astro', 'marksman'},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
