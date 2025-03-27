@@ -6,6 +6,3 @@ vim.keymap.set('n', '<leader>ps', function()
 		builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
 vim.keymap.set('n', '<leader>pw', builtin.grep_string, {})
-vim.keymap.set('v', '<leader>pw', function()
-		builtin.grep_string({ search = "<C-R>0" });
-end)
