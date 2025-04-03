@@ -1,7 +1,7 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+  local opts = { buffer = bufnr, remap = false }
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'ts_ls', 'rust_analyzer','solidity_ls_nomicfoundation', 'cssls', 'astro', 'marksman'},
+  ensure_installed = { 'ts_ls', 'rust_analyzer', 'solidity_ls_nomicfoundation', 'cssls', 'astro', 'marksman', 'lua_ls' },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -31,9 +31,9 @@ local cmp = require('cmp')
 
 cmp.setup({
   sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
